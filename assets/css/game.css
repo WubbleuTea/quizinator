@@ -21,9 +21,44 @@ h2 {
     border: .2rem solid rgb(20, 26, 184);
     padding: 2rem;
     border-radius: 2.5rem;
+    width: 100%;
 }
 
 .answer-container:hover {
     background-color: rgba(70, 229, 96, 0.5);
     transition: 1s;
 }
+
+.yesorno {
+    border-top: .5rem solid rgb(20, 26, 184);
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.initials {
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    max-width: 80rem;
+    margin: auto;
+    visibility: hidden;
+}
+
+.form-title {
+    font-size: 4rem;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#textbox {
+    background-color: rgba(226, 241, 207, 0.75);
+    padding: 20px;
+    color: var(--secondary-color);
+    border: solid 3px var(--secondary-color);
+    margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: .2rem solid rgb(20, 26, 184);
+    border-radius: 15px;
+}
+

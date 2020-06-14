@@ -36,7 +36,7 @@ header {
 .btn:hover {
     cursor: pointer;
     background-color: rgba(70, 229, 96, 0.75);
-    transition: 2s;
+    transition: 1s;
 }
 
 .title {
@@ -49,7 +49,7 @@ header {
 .title:hover {
     cursor: pointer;
     font-size: 6rem;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .justify-right {
