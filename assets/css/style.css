@@ -18,16 +18,19 @@ header {
     width: 100%;
     background-color: rgb(226, 241, 242);
     justify-content: space-between;
+    height: fit-content;
+    margin: auto;
 }
 
 .btn {
     border: .2rem solid rgb(20, 26, 184);
-    padding: 0.25rem;
+    padding: 2rem;
     text-align: center;
     text-decoration: none;
     background-color: rgba(226, 241, 207, 0.75);
-    padding: 3rem;
     font-size: 3.2rem;  
+    height: fit-content;
+    width: auto;
 }
 
 .btn:hover {
@@ -39,13 +42,13 @@ header {
 .title {
     font-size: 5rem;
     justify-content: center;
-    padding: 4rem;
     text-decoration: none;
+
 }
 
 .title:hover {
     cursor: pointer;
-    font-size: 7.2rem;
+    font-size: 6rem;
     transition: 1s;
 }
 
@@ -53,21 +56,24 @@ header {
     justify-content: end;
 }
 
-.timer {
+#timer {
     font-size: 2.4rem;
 
 }
 
 main {
     justify-content: center;
-    padding: 5rem; 
-    display: inline;
+    padding: 20rem;
+    max-width: 90vw;
+    width: 100%;
+    margin: auto;
 }
 
 main p {
     font-size: 3.2rem;
     padding-bottom: 10rem;
     justify-content: center;
+    text-align: center;
 }
 
 main a {
