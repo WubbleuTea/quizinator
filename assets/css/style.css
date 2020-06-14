@@ -1,0 +1,82 @@
+:root {
+    font-size: 62.5%;
+    background-color: rgb(246, 241, 242);
+}
+
+* {
+    color: rgb(20, 26, 133);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    width: 100%;
+    background-color: rgb(226, 241, 242);
+    justify-content: space-between;
+}
+
+.btn {
+    border: .2rem solid rgb(20, 26, 184);
+    padding: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(226, 241, 207, 0.75);
+    padding: 3rem;
+    font-size: 3.2rem;  
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(70, 229, 96, 0.75);
+    transition: 2s;
+}
+
+.title {
+    font-size: 5rem;
+    justify-content: center;
+    padding: 4rem;
+    text-decoration: none;
+}
+
+.title:hover {
+    cursor: pointer;
+    font-size: 7.2rem;
+    transition: 1s;
+}
+
+.justify-right {
+    justify-content: end;
+}
+
+.timer {
+    font-size: 2.4rem;
+
+}
+
+main {
+    justify-content: center;
+    padding: 5rem; 
+    display: inline;
+}
+
+main p {
+    font-size: 3.2rem;
+    padding-bottom: 10rem;
+    justify-content: center;
+}
+
+main a {
+    justify-content: center;
+    text-align: center;
+    float: none;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
