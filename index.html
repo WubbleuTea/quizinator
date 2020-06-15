@@ -9,13 +9,29 @@
     <body>
         <header>
             <a class="btn" href="highscore.html">High Scores!</a>
-            <a class="justify-center title" href="index.html">Quizinator</a>
-            <p id= "timer" class="justify-right">Timer</p>
+            <a class="justify-center title">Quizinator</a>
+            <p id= "timer" class="justify-right">60 seconds remaining</p>
         </header>
-        <main class="flex-column">
+        <main id="first-page" class="flex-column">
             <p>You will have 60 seconds to answer the following questions.</p>
-            <a class="btn" href="game.html">Click here to begin!</a>
+            <button class="btn" id="start-game">Click here to begin!</button>
         </main>
-        <script src="./assets/js/script.js"></script>
+        <section class="quiz-container">
+            <div id="quiz" class="flex-column">
+                <h2 id="question"></h2>
+                <div id="answer-choices"></div>
+                <div id="accuracy"></div>   
+            </div>
+        </section>
+            <div id="initials" class="initials flex-column"></div>
+        <!-- <form id="initials" class="initials flex-column">
+            <div id="saved-score"></div>
+            <label for="initials" class="form-title"> 
+                Your score is the amount of seconds you have left. If you would like to save your score please enter your initals and click submit.
+            </label><br>
+            <input type="text" placeholder="Enter Initials Here" id="textbox" name="initials"><br>
+            <input type="submit" class="btn" value="Submit">
+        </form> -->
+        <script src="./assets/js/games.js"></script>
     </body>
 </html>

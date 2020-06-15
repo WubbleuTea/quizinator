@@ -1,32 +1,22 @@
+var startGame = document.getElementById("start-game");
+var firstPage = document.getElementById("first-page");
 var questionTitle = document.getElementById("question");
 var answerTitle = document.getElementById("answer-choices");
 var accuracyTitle = document.getElementById("accuracy");
 var getInitials = document.getElementById("initials");
-var savedScore = document.getElementById("saved-score")
+var quizContainer = document.getElementById("quiz");
+var textboxInitials = document.getElementById("textbox");
+var highscore = [];
+
+
 var questionNumber = 0;
 var finalScore = 0;
-var currentQuestion = {};
 var startCountdown;
-//timer
 
+//timer
 var timer = 10;
-var countdown = function() {
-    var timerEl = document.getElementById('timer');
-    timerEl.textContent = timer + " seconds remaining";
-       
-    if(timer <= 0) {
-        timer = 0;
-        clearInterval(startCountdown);
-        timerEl.textContent = timer + " seconds remaining";
-        questionTitle.remove();
-        answerTitle.remove();
-        accuracyTitle.remove();
-        getInitials.style.visibility = "visible";
-        savedScore.appendChild(timer);
-        console.log("your final score is " + finalScore);
-    };
-    timer--;
-};
+
+
 
 
 // array of questions
@@ -45,15 +35,35 @@ var questionsTotal = [
  
 ];
 
+var countdown = function() {
+    var timerEl = document.getElementById('timer');
+    timerEl.textContent = timer + " seconds remaining";
+       
+    if(timer <= 0) {
+        timer = 0;
+        clearInterval(startCountdown);
+        timerEl.textContent = timer + " seconds remaining";
+        questionTitle.remove();
+        answerTitle.remove();
+        accuracyTitle.remove();
+        getInitials.style.visibility = "visible";
+        collectData();
+    };
+    timer--;
+};
+
+
 
 //gameBegin function
-gameBegin = function() {
+var gameBegin = function() {
     startCountdown = setInterval(countdown, 1000);
+    firstPage.remove();
+    quizContainer.style.visibility = "visible";
     nextQuestion();
 }
 
 //nextQuestion Function
-nextQuestion = function() {
+var nextQuestion = function() {
     if (questionNumber < questionsTotal.length) {
         accuracyTitle.textContent = "";
         var gameQuestion = questionsTotal[questionNumber];
@@ -80,8 +90,8 @@ nextQuestion = function() {
         answerTitle.remove();
         accuracyTitle.remove();
         getInitials.style.visibility = "visible";
-        savedScore.appendChild(finalScore);
         console.log("your final score is " + finalScore);
+        endQuiz();
     }
 };
 
@@ -107,8 +117,35 @@ function chosenAnswer() {
     };
 };
 
+function endQuiz(event) {
+    initials.innerHTML = `
+		<p class="form-title jusify-center"> You got final score of ${finalScore}!</p>
+		<br><br>
+    <form onsubmit="savedData(event)">
+      <input type="text" placeholder="Enter Initials Here" id="textbox" class="jusify-center" name="initials"></input>
+      <input type="submit" class="btn jusify-center" value="Save Score"></input>
+        </form>
 
-gameBegin();
+
+  `;
+}
+
+function savedData(event){
+    event.preventDefault();
+    console.log(event.target[0].value);
+    var nameInput = event.target[0].value;
+    var savedInfo = {
+            name: nameInput,
+            score: finalScore,
+    }
+
+    highscore.push(savedInfo);
+    localStorage.setItem("highscore", JSON.stringify(highscore));
+};
+
+startGame.addEventListener("click", gameBegin);
+
+
 
 
 
