@@ -14,7 +14,7 @@ var finalScore = 0;
 var startCountdown;
 
 //timer
-var timer = 10;
+var timer = 60;
 
 
 
@@ -23,16 +23,30 @@ var timer = 10;
     
 var questionsTotal = [
     {
-        question: "Here is my first question",
-        choices:  ["1-1", "1-2", "1-3", "1-4"],
-        trueStatement: "1-4"
+        question: "What HTML element houses Javascript code",
+        choices:  ["head", "header", "body", "script"],
+        trueStatement: "script"
     },
     {
-        question: "Here is my second question",
-        choices:  ["2-1", "2-2", "2-3", "2-4"],
-        trueStatement: "2-2"
+        question: "What part of the script should global variables be declared?",
+        choices:  ["Top", "Right", "Bottom", "Left"],
+        trueStatement: "Top"
     },
- 
+    {
+        question: "What part of the HTML document should you insert your Javascript?",
+        choices:  ["Top", "Head", "Bottom", "Body"],
+        trueStatement: "Body"
+    },
+    {
+        question: "What is one way to insert code into the DOM?",
+        choices:  ["Push", "innerHTML", "Shove", "bodyDeclaration"],
+        trueStatement: "innerHTML"
+    },
+    {
+        question: "What is something you can do in Javascript?",
+        choices:  ["Style text", "Eat a sandwich", "Create Timer functons", "Add HTML"],
+        trueStatement: "Eat a sandwich"
+    },
 ];
 
 var countdown = function() {
@@ -47,7 +61,7 @@ var countdown = function() {
         answerTitle.remove();
         accuracyTitle.remove();
         getInitials.style.visibility = "visible";
-        collectData();
+        endQuiz();
     };
     timer--;
 };
@@ -125,11 +139,8 @@ function endQuiz(event) {
       <input type="text" placeholder="Enter Initials Here" id="textbox" class="jusify-center" name="initials"></input>
       <input type="submit" class="btn jusify-center" value="Save Score"></input>
         </form>
-
-
   `;
 }
-
 function savedData(event){
     event.preventDefault();
     console.log(event.target[0].value);
@@ -138,30 +149,14 @@ function savedData(event){
             name: nameInput,
             score: finalScore,
     }
-
     highscore.push(savedInfo);
     localStorage.setItem("highscore", JSON.stringify(highscore));
+    window.location.href = "highscore.html";
 };
 
 startGame.addEventListener("click", gameBegin);
 
 
 
-
-
-
-
-
-// if(questionNumber === questionsTotal.length) {
-    //     alert("Game is over");
-    //     clearInterval(startCountdown);
-    //     finalScore = timer;
-    //     localStorage.setItem("intials", prompt("Please enter your initaials"));
-    //     localStorage.setItem("score", finalScore);
-    // } else if(questionNumber < questionsTotal.length) {
-    //     currentQuestion = questionsTotal;
-    //     questionsTotal.innerText = currentQuestion.question;
-    // }
-
-    // localStorage.setItem("player", prompt("Please enter your initials"));
-    //     localStorage.setItem("score", finalScore);
+// display-highscores.innerHTML = `
+// <p class="form-title jusify-center"> Here are the highscores!</p>`;
