@@ -140,6 +140,10 @@ h2 {
     text-decoration: none;
 }
 
+.high-score {
+    color: rgb(203, 7, 88);
+};
+
 #textbox {
     background-color: rgba(226, 241, 207, 0.75);
     padding: 20px;
@@ -154,4 +158,10 @@ h2 {
 
 #display-hs {
     padding: 5rem 0;
-}
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(203, 216, 183);
+};
