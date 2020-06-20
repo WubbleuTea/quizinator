@@ -136,7 +136,7 @@ function endQuiz(event) {
 		<p class="form-title jusify-center"> You got final score of ${finalScore}!</p>
 		<br><br>
     <form onsubmit="savedData(event)">
-      <input type="text" placeholder="Enter Initials Here" id="textbox" class="jusify-center" name="initials"></input>
+      <input type="text" placeholder="Enter Initials Here" id="textbox" class="jusify-center initials-input" name="initials"></input>
       <input type="submit" class="btn jusify-center" value="Save Score"></input>
         </form>
   `;
